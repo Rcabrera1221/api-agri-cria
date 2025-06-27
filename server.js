@@ -9,6 +9,8 @@ const reportesGanadero = require('./routes/reportesGanadero');
 const dashboardGanadero = require('./routes/dashboardGanadero');
 const guardarActividad = require('./routes/guardaActividades');
 const traeActividad = require('./routes/traeActividades');
+const guardaNotificaciones = require('./routes/guardaNotificaciones');
+const traeNotificaciones = require('./routes/traeNotificaciones');
 require('dotenv').config();
 
 app.use(cors({
@@ -29,6 +31,8 @@ app.use('/api/reportesGanadero', reportesGanadero);
 app.use('/api/dashboardGanadero', dashboardGanadero);
 app.use('/api/guardarActividad', guardarActividad);
 app.use('/api/traeActividades', traeActividad);
+app.use('/api/guardaNotificaciones', guardaNotificaciones);
+app.use('/api/traeNotificaciones', traeNotificaciones);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
